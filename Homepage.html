@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-<title>Blocks Demo</title>
-<style type="text/css">
-#top {background-image: url(pond.jpg);  background-size:cover;
-height: 200px; width: 100%; text-align:center; 
-               font-size:  40px; padding-top: 100px; box-sizing: border-box; }
-.left-col,.right-col {display:inline-block;  width: 49%; margin: 0;}
-.left-col {background-color:  #ccc;}
-</style>
-</head>
-<body>
-<div id='top’> This is the banner  </div>
-<div id='content'>
-<div class='left-col’> this goes on the left  </div><!-- end col1-->
-<div class='right-col’> this goes on the right </div><!-- end col2-->
-</div> <!-- end content-->
-</body>
+<div class="hero-banner">
+  <h1 class="hero-banner-title">Welcome to Our Website</h1>
+  <p class="hero-banner-description">Explore our products and services</p>
+  <a class="hero-banner-button" href="#">Learn More</a>
+</div>
+  
+.hero-banner {
+  background-image: url(hero-background.jpg);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-banner-title {
+  font-size: 48px;
+  color: white;
+  text-shadow: 1px 1px #333;
+  margin-bottom: 20px;
+}
+
+.hero-banner-description {
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px #333;
+  margin-bottom: 20px;
+}
+
+.hero-banner-button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 1px 1px #333;
+}
+
   
 </html>
