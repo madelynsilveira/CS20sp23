@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
-  </head>
+    <title>Contact</title>
   
-<!-- I used this link to help me with sticky header: https://www.w3schools.com/howto/howto_js_sticky_header.asp -->
+<!DOCTYPE html>
+<html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -12,88 +13,70 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.top-container {
-  background-image: url("rink.jpg");
-   background-size: contain;
-  padding: 10px;
-  text-align: center;
-}
-
-.header {
-  padding: 10px 16px;
-  background: #dd3b50;
-  color: #f1f1f1;
-}
-
-.sticky {
+/* nav bar main text */
+.nav {
+  overflow: hidden;
+  background-color: #333;
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 35px;
+  vertical-align: top;
 }
 
-
-/*  navbar style specifications */
-ul {
-  list-style-type: none;
-  background-color: #Red;
-  margin: 0;
-  padding: 0;
+/* links in nav bar */
+.nav a {
+  float: left;
+  color: Aliceblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
 }
-li {
-  display: inline;
+
+/* changing links based on clicks */
+.nav a:hover {
+  background-color: #dd3b50;
+  background-size: 10px contain;
+  color: black;
+}
+.nav a.active {
+  background-color: red;
+  color: Aliceblue;
+}
+
+.nav-right {
   float: right;
 }
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
   
-</style>
-
-
-<body>
- 
-
-<div class="top-container">
-  <h1>Contact</h1>
-  <p>Click for more info on class dates and locations.</p>
-</div>
-
-<div class="header" id="myHeader">
-  <img src="logo.png" alt="Logo" style="float:left" scale=".7">
-  <h2>&emsp;Bay State Skating School</h2>
-  <p>&emsp;Celebrating Over 50 Years!</p>
-    
-    <!--  Nav Bar: https://www.w3schools.com/css/css_navbar_horizontal.asp -->
-   <ul>
-    <li><a href="https://madelynsilveira.github.io/CS20sp23/About.html">About</a></li>
-    <li><a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Classes</a></li>
-    <li><a href="https://madelynsilveira.github.io/CS20sp23/Register.html">Register</a></li>
-    <li><a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies</a></li> &emsp; <br>
-     <li><a href="https://madelynsilveira.github.io/CS20sp23/FAQ.html">FAQ</a></li> &emsp; <br>
-     <li><a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact</a></li> &emsp; <br>
-  </ul>
-</div>
-
-
-<script>
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
+.main {
+  padding: 16px;
+  margin-top: 170px; /* fit below the nav bar */
 }
-</script>
 
+footer { 
+  text-align: center;
+  padding: 3px;
+  background-color: #dd3b50;
+  color: Aliceblue;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <img src="logo.png" alt="Logo" style="float:left;padding:10px;" scale=".5">
+  <p style="font-family:cursive;color:AliceBlue;">&nbsp; Bay State Skating School <span style="color:#dd3b50;">&nbsp;&hearts;&nbsp;</span> <span style="color:#e6f3ff;">Celebrating Over 50 Years!</span></p>
+  <div class="nav-right">
+    <a href="https://madelynsilveira.github.io/CS20sp23/About.html">About</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Classes</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Register.html">Register</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies&emsp;</a>
+  </div>
+</div>
+
+<div class="main" style="padding-left:16px">
     
     <p style="background-color:Gainsboro;"><strong>Instructor Sign-up</strong></p>
     <form>
@@ -157,7 +140,15 @@ function myFunction() {
         <td>Register</td>
       </tr>
   </table>
-      
-     
-  </body>
+      </div>
+  
+<footer>
+  <p>Email us at <a href="lessons@baystateskating.com">lessons@baystateskating.com</a> or call (781) 890-8480 for further information. Also join us on 
+  <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on regirstration and events! </p>
+  <p style="font-size:15px;color:#333;">Bay State Skating School ©2018. All rights reserved</p>
+</footer>
+  
+</body>
 </html>
+     
+
