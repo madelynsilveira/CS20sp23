@@ -2,15 +2,107 @@
 <html>
   <head>
     <title>Register</title>
-  </head>
-  <body>
-    <h1 style="background-color:#dd3b50;">&nbsp; Register</h1>
-    <p>&emsp; <strong>Name:</strong> Madelyn</p>
-    <p>&emsp; <strong>Major:</strong> Computer Science + Cognitive and Brain Sciences</p>
-    <p>&emsp; <strong>IP Address:</strong> 130.64.64.69</p>
-    <p>&emsp; <strong>The place I grew up:</strong> Andover, Massachusetts</p>
-    <p>&emsp; <strong>Something nobody would expect about me:</strong> I believe we live in a simulation.</p>
-    <p>&emsp; <strong>My favorite place:</strong> Pond by my house featuring Gilly the goose.</p>
-    <img src="pond.jpg" alt="My favorite pond" height="400" width="520">
-  </body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* nav bar main text */
+.nav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 35px;
+  vertical-align: top;
+}
+
+/* links in nav bar */
+.nav a {
+  float: left;
+  color: Aliceblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* changing links based on clicks */
+.nav a:hover {
+  background-color: #dd3b50;
+  background-size: 10px contain;
+  color: black;
+}
+.nav a.active {
+  background-color: red;
+  color: Aliceblue;
+}
+
+.nav-right {
+  float: right;
+}
+  
+.main {
+  padding: 16px;
+  margin-top: 170px; /* fit below the nav bar */
+}
+
+footer { 
+  text-align: center;
+  padding: 3px;
+  background-color: #dd3b50;
+  color: Aliceblue;
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <img src="logo.png" alt="Logo" style="float:left;padding:10px;" scale=".5">
+  <p style="font-family:cursive;color:AliceBlue;">&nbsp; Bay State Skating School <span style="color:#dd3b50;">&nbsp;&hearts;&nbsp;</span> <span style="color:#e6f3ff;">Celebrating Over 50 Years!</span></p>
+  <div class="nav-right">
+    <a href="https://madelynsilveira.github.io/CS20sp23/About.html">About</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Classes</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Register.html">Register</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies&emsp;</a>
+  </div>
+</div>
+
+<div class="main" style="padding-left:16px">
+
+<!-- I used this link to help me with forms: https://www.w3schools.com/html/html_forms.asp -->
+    </form>   
+    <table>
+      <tr>
+        <th>Class</th>
+        <th>Rink</th>
+        <th>Lesson Dates</th>
+        <th>Registeration</th>
+      </tr>
+      <tr>
+        <td>Brookline Larz Anderson Saturday</td>
+        <td>Saturday</td>
+        <td>February 4, 2023 10:45 AM</td>
+        <td>Register</td>
+      </tr>
+      <tr>
+        <td>Brookline Larz Anderson Sunday</td>
+        <td>Saturday</td>
+        <td>February 5, 2023 10:45 AM</td>
+        <td>Register</td>
+      </tr>
+  </table>
+    </div>
+
+<footer>
+  <p>Email us at <a href="lessons@baystateskating.com">lessons@baystateskating.com</a> or call (781) 890-8480 for further information. Also join us on 
+  <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on regirstration and events! </p>
+  <p style="font-size:15px;color:#333;">Bay State Skating School ©2018. All rights reserved</p>
+</footer>
+  
+</body>
 </html>
