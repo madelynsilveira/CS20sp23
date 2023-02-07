@@ -9,69 +9,81 @@ body {
 }
 
 /* nav bar main text */
-.topnav {
+.nav {
   overflow: hidden;
   background-color: #333;
-  color: white;
-  padding: 14px 16px;
   position: fixed;
   top: 0;
   width: 100%;
+  font-size: 35px;
+  vertical-align: top;
 }
 
 /* links in nav bar */
-.topnav a {
+.nav a {
   float: left;
-  color: #f2f2f2;
+  color: Aliceblue;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 /* changing links based on clicks */
-.topnav a:hover {
-  background-color: #ddd;
+.nav a:hover {
+  background-color: #dd3b50;
+  background-size: 10px contain;
   color: black;
 }
-.topnav a.active {
+.nav a.active {
   background-color: red;
-  color: white;
+  color: Aliceblue;
 }
 
-.topnav-right {
+.nav-right {
   float: right;
 }
   
 .main {
   padding: 16px;
-  margin-top: 150px;
+  margin-top: 170px; /* fit below the nav bar */
+}
+
+footer { 
+  text-align: center;
+  padding: 3px;
+  background-color: #dd3b50;
+  color: Aliceblue;
 }
 </style>
 </head>
 <body>
 
-<div class="topnav">
-  <img src="logo.png" alt="Logo" style="float:left" scale=".5">
-  <p style="font-family:Brush Script MT;font-size:50">&emsp;&emsp; Bay State Skating School</p>
-  <p style="font-family:Brush Script MT">&emsp;&emsp; Celebrating Over 50 Years!</p>
-  <div class="topnav-right">
+<div class="nav">
+  <img src="logo.png" alt="Logo" style="float:left;padding:10px;" scale=".5">
+  <p style="font-family:cursive;color:AliceBlue;">&nbsp; Bay State Skating School <span style="color:#dd3b50;">&nbsp;&hearts;&nbsp;</span> <span style="color:#e6f3ff;">Celebrating Over 50 Years!</span></p>
+  <div class="nav-right">
     <a href="https://madelynsilveira.github.io/CS20sp23/About.html">About</a>
     <a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Classes</a>
     <a href="https://madelynsilveira.github.io/CS20sp23/Register.html">Register</a>
-    <a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies</a>
-    <a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact&emsp;</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact</a>
+    <a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies&emsp;</a>
   </div>
 </div>
-  
+
 <div class="main" style="padding-left:16px">
   <h2>Top Navigation with Right Aligned Links</h2>
   <p>With 50 Years of experience, BAY STATE SKATING SCHOOL offers a tried and true method of instruction for the beginner, 
   Intermediate and advanced skater. Recreational, figure and hockey skating skills are taught by dedicated and caring 
   Professional Instructors. Girls and boys are grouped according to age and ability. Class sizes are small. Our emphasis is 
   on quality instruction, safety, building confidence and having fun while learning to skate.</p>
-  
-  
   </div>
+  
+ <footer>
+  <p>Email us at <a href="lessons@baystateskating.com">lessons@baystateskating.com</a> or call (781) 890-8480 for further information. Also join us on 
+  <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on regirstration and events! </p>
+  <p style="font-size:15px;color:#333;">Bay State Skating School ©2018. All rights reserved</p>
+</footer>
+  
 </body>
 </html>
