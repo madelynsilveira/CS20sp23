@@ -75,14 +75,13 @@ footer {
 <div class="main" style="padding-left:16px">
   <h2> Sign Up for Classes </h2>
       <form action="/action_page.php" target="_blank">
-      <label for="fname">First name:</label>
+      <label for="fname">Child name:</label>
       <input type="text" id="fname" name="fname"><br>
-      <label for="lname">Last name:</label>
-      <input type="text" id="lname" name="lname"><br>
-      <label for="lname">Email:</label>&emsp;&emsp;&nbsp;
+      <input type="radio" id="hockey" name="hockey" value="Hockey">
+      <label for="hockey"> Child is 4-18 years old.</label><br>
+      <label for="lname">Parent Email:</label>&emsp;&emsp;&nbsp;
       <input type="text" id="lname" name="lname"><br><br>
 
-      <p><strong>Rinks I'm interested in teaching at:</strong></p>
       <label for="class">Choose a class:</label>
       <select name="classes" id="classes">
         <option value="volvo">Brookline Larz Anderson Saturday</option>
@@ -101,12 +100,6 @@ footer {
         <option value="opel">Weymouth Sunday IV</option>
      </select>
       
-
-      <p><strong> I use... </strong></p>
-      <input type="radio" id="hockey" name="hockey" value="Hockey">
-      <label for="hockey"> hockey skates</label><br>
-      <input type="radio" id="figure" name="figure" value="Figure">
-      <label for="figure"> figure skates</label><br><br>
 
       <input type="submit" value="Submit"><br>
     </form>
