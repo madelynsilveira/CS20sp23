@@ -51,6 +51,21 @@ body {
   margin-top: 170px; /* fit below the nav bar */
 }
 
+/* Container holding the image and the text */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+  
+/* Centered text for banner*/
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 footer { 
   text-align: center;
   padding: 3px;
@@ -81,22 +96,26 @@ video {
   
 <div class="main" style="padding-left:16px">
   <h2>Get Aquainted with Bay State Skating School</h2>
-  <p>With 50 Years of experience, Bay State Skating School offers a tried and true method of instruction for the beginner, Intermediate and advanced skater. Recreational, figure and hockey skating skills are taught by dedicated and caring Professional Instructors. Girls and boys are grouped according to age and ability. Class sizes are small. Our emphasis is on quality instruction, safety, building confidence and having fun while learning to skate.</p>
-  <h3>Skate with us!</h3>
-<!-- I used this link to help me with videos: https://www.w3schools.com/html/html5_video.asp -->
-<!--   <img src="BayStateFinal.mp4" alt="Demo Video"> -->
+  <!-- I used this link to help me with videos: https://www.w3schools.com/html/html5_video.asp -->
   <video width="360" height="240" controls autoplay muted>
     <source src="BayStateFinal.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  
+  <p>With 50 Years of experience, Bay State Skating School offers a tried and true method of instruction for the beginner, Intermediate and advanced skater. Recreational, figure and hockey skating skills are taught by dedicated and caring Professional Instructors. Girls and boys are grouped according to age and ability. Class sizes are small. Our emphasis is on quality instruction, safety, building confidence and having fun while learning to skate.</p>
+  
+  <h3>Skate with us!</h3>
   <p> Our school is a NON-PROFIT Organization dedicated to teaching ice skating skills while having fun. Classes are held at 10 Rinks throughout Greater Boston, North, South and West of the City for children ages 4 through 18. Learn to Skate and have fun!</p>
   <h4>Rink locations</h4>
   <p>Brookline Cleveland Circle, Brookline Larz Anderson, Cambridge, Medford, Newton-Brighton, Quincy, Somerville, Waltham, West Roxbury, Weymouth</p>
-  <img src="instruction.jpg" alt="Rink" style="width:100%;padding:0px;">
-
-  </div>
   
- <footer>
+  <div class="banner">
+    <img src="instruction.jpg" alt="Rink" style="width:100%;padding:0px;">
+    <div class="centered"><a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Registration Now Open!</a></div>
+  </div>
+</div>
+  
+<footer>
   <p>Email us at <a href="lessons@baystateskating.com">lessons@baystateskating.com</a> or call (781) 890-8480 for further information. Also join us on 
   <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on regirstration and events! </p>
   <p style="font-size:15px;color:#333;">Bay State Skating School ©2018. All rights reserved</p>
