@@ -7,7 +7,15 @@
   <link rel="stylesheet" href="styles.css">
   <!-- internal stylesheet for just this page -->
   <style>
-    /* Container holding the image and the text */
+    /* container for rinks */
+    .rinks {
+      text-align: center;
+      text-decoration: none; 
+      background-color: #dd3b50;
+      background-size: auto 100px;
+    }
+    
+    /* container holding image and text */
     .banner {
       position: relative;
       text-align: center;
@@ -15,13 +23,13 @@
       color: white;
     }
 
-    /* Centered text for banner*/
+    /* centered text for banner*/
     .link {
+      text-decoration: none; 
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-decoration: none; 
       color: #dd3b50;
       font-size: 50px;
     }
@@ -59,9 +67,11 @@
   <br><br>
   <h3>Skate with us!</h3>
   <p> Our school is a NON-PROFIT Organization dedicated to teaching ice skating skills while having fun. Classes are held at 10 Rinks throughout Greater Boston, North, South and West of the City for children ages 4 through 18. Learn to Skate and have fun!</p>
-  <h4>Rink locations</h4>
-  <p>Brookline Cleveland Circle, Brookline Larz Anderson, Cambridge, Medford, Newton-Brighton, Quincy, Somerville, Waltham, West Roxbury, Weymouth</p>
   
+  <div class="rinks">
+    <h4>Rink locations</h4>
+    <p>Brookline Cleveland Circle, Brookline Larz Anderson, Cambridge, Medford, Newton-Brighton, Quincy, Somerville, Waltham, West Roxbury, Weymouth</p>
+  </div>
 <!-- ref link for this banner: https://www.w3schools.com/howto/howto_css_image_text.asp -->
   <div class="banner">
     <img src="instruction.jpg" alt="Rink" style="width:100%;padding:0px;">
@@ -71,7 +81,7 @@
   
 <footer>
   <p>Email us at <a href="lessons@baystateskating.com">lessons@baystateskating.com</a> or call (781) 890-8480 for further information. Also join us on 
-  <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on regirstration and events! </p>
+  <a href="https://www.facebook.com/baystateskatingschool/">facebook</a> to stay up to date on registration and events! </p>
   <p style="font-size:15px;color:#333;">Bay State Skating School ©2018. All rights reserved</p>
   
 </footer>
