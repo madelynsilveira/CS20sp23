@@ -15,12 +15,46 @@
 
   <script>
   function myFunction() {
-    let person = prompt("Please enter your name", "Harry Potter");
-    if (person != null) {
+    let hotdogs = prompt("How many hotdogs would you like?", "1");
+    let fries = prompt("How many fries would you like?", "1");
+    let sodas = prompt("How many sodas would you like?", "1");
+    if (hotdogs != null) {
+      if (hotdogs == 1) {
+        document.getElementById("demo").innerHTML =
+        "Awesome! " + hotdogs + " hotdog coming up!";
+      } else {
+        document.getElementById("demo").innerHTML =
+        "Awesome! " + hotdogs + " hotdogs coming up!";
+      }
+
+    }
+    if (fries != null) {
       document.getElementById("demo").innerHTML =
-      "Hello " + person + "! How are you today?";
+      "Awesome! " + fries + " fries coming up!";
+    }
+    if (sodas != null) {
+      document.getElementById("demo").innerHTML =
+      "Awesome! " + sodas + " sodas coming up!";
     }
   }
   </script>
 </body>
 </html>
+<!--  
+how many hotdogs do they want, 
+how many fries do they want 
+how many sodas do they want.  
+
+Calculate the subtotal for the order based on the pricing and the quantities requested. Store in a variable.
+
+Implement Joe’s special offer - 10% discount if the order (before tax) is at least $20.  Update the subtotal.  Store the discount amount in a variable.
+
+Add 6.25% Massachusetts meals tax to the subtotal.  This is the final amount the customer will need to pay.
+
+Display all order information below on the page:  
+Items ordered and quantities
+subtotals
+discount, if applicable
+tax
+final total 
+All currency values must be rounded to 2 decimal places.  Use an arithmetic calculation.   -->
