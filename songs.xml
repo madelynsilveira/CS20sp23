@@ -1,7 +1,6 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href = "songs.css" ?>
-
 <songs>
   <song>
     <artist>The Wonder Years</artist>
@@ -64,5 +63,3 @@
     <year>1969</year>
   </song>
 </songs>
-
-<!-- he artist(s), title, music genre, and year the song was released. -->
