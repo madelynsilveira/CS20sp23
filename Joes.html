@@ -5,32 +5,31 @@
 </head>
 <style>
 body {
-  margin: 0;
-  font-family: "Bitter",serif;
-}
+    margin: 0;
+    font-family: "Bitter",serif;
+  }
+  .nav {
+    overflow: hidden;
+    background-color: #Firebrick;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 50px;
+    vertical-align: top;
+    z-index: 10; 
+  }
+  .main {
+    padding: 16px;
+    margin-top: 170px; 
+    font-size: 18px;
+  }
 
-.nav {
-  overflow: hidden;
-  background-color: #Firebrick;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 50px;
-  vertical-align: top;
-  z-index: 10; 
-}
-.main {
-  padding: 16px;
-  margin-top: 170px; /* fit below the nav bar */
-  font-size: 18px;
-}
-
-footer { 
-  text-align: center;
-  padding: 3px;
-  background-color: #dd3b50;
-  color: Firebrick;
-}
+  footer { 
+    text-align: center;
+    padding: 3px;
+    background-color: #dd3b50;
+    color: Firebrick;
+  }
 </style>
 <body>
   <div class="nav">
@@ -39,38 +38,40 @@ footer {
   </div>
   
 <!--   <h1 style="background-color:Red;">&nbsp; Joe's Hotdogs</h1> -->
-  <h2>The prompt() Method</h2>
+  <div class="main">
+    <h2>The prompt() Method</h2>
 
-  <p>Click the button to demonstrate the prompt box.</p>
+    <p>Click the button to demonstrate the prompt box.</p>
 
-  <button onclick="myFunction()">Try it</button>
+    <button onclick="myFunction()">Try it</button>
 
-  <p id="demo"></p>
+    <p id="demo"></p>
 
-  <script>
-  function myFunction() {
-    let hotdogs = prompt("How many hotdogs would you like?", "1");
-    let fries = prompt("How many fries would you like?", "1");
-    let sodas = prompt("How many sodas would you like?", "1");
-    if (hotdogs != null) {
-      if (hotdogs == 1) {
-        document.getElementById("demo").innerHTML =
-        "Awesome! " + hotdogs + " hotdog coming up!";
-      } else {
-        document.getElementById("demo").innerHTML =
-        "Awesome! " + hotdogs + " hotdogs coming up!";
+    <script>
+    function myFunction() {
+      let hotdogs = prompt("How many hotdogs would you like?", "1");
+      let fries = prompt("How many fries would you like?", "1");
+      let sodas = prompt("How many sodas would you like?", "1");
+      if (hotdogs != null) {
+        if (hotdogs == 1) {
+          document.getElementById("demo").innerHTML =
+          "Awesome! " + hotdogs + " hotdog coming up!";
+        } else {
+          document.getElementById("demo").innerHTML =
+          "Awesome! " + hotdogs + " hotdogs coming up!";
+        }
+
       }
-
+      if (fries != null) {
+        document.getElementById("demo").innerHTML =
+        "Awesome! " + fries + " fries coming up!";
+      }
+      if (sodas != null) {
+        document.getElementById("demo").innerHTML =
+        "Awesome! " + sodas + " sodas coming up!";
+      }
     }
-    if (fries != null) {
-      document.getElementById("demo").innerHTML =
-      "Awesome! " + fries + " fries coming up!";
-    }
-    if (sodas != null) {
-      document.getElementById("demo").innerHTML =
-      "Awesome! " + sodas + " sodas coming up!";
-    }
-  }
+  </div>
   </script>
   
   <footer>
