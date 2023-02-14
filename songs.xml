@@ -1,0 +1,67 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<songs>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+  <song>
+    <artist></artist>
+    <title></title>
+    <genre></album>
+    <year></year>
+  </song>
+</songs>
+
+<!-- he artist(s), title, music genre, and year the song was released. -->
