@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Joes Hotdogs</title>
+<!--   <link rel="stylesheet" href="styles.css"> -->
 </head>
 <style>
 body {
@@ -33,12 +34,18 @@ body {
 </style>
 <body>
   <div class="nav">
-  <img src="hotdog.png" alt="Logo" style="float:left;padding:10px;" scale=".1">
-  <h1><strong> Joe's Hotdogs</strong></h1>
+    <img src="hotdog.png" alt="Logo" style="float:left;padding:10px;" scale=".1">
+    <h1><strong> Joe's Hotdogs</strong></h1>
+    <div class="nav-right">
+      <a href="https://madelynsilveira.github.io/CS20sp23/Home.html">Hotdogs</a>
+      <a href="https://madelynsilveira.github.io/CS20sp23/Classes.html">Fries</a>
+      <a href="https://madelynsilveira.github.io/CS20sp23/Register.html">Sodas</a>
+      <a href="https://madelynsilveira.github.io/CS20sp23/Contact.html">Contact</a>
+      <a href="https://madelynsilveira.github.io/CS20sp23/Policies.html">Policies&emsp;</a>
+    </div>
   </div>
   
-<!--   <h1 style="background-color:Red;">&nbsp; Joe's Hotdogs</h1> -->
-  <div class="main">
+  <div class="main" style="padding-left:16px">
     <h2>The prompt() Method</h2>
 
     <p>Click the button to demonstrate the prompt box.</p>
@@ -48,37 +55,29 @@ body {
     <p id="demo"></p>
 
     <script>
-    function myFunction() {
-      let hotdogs = prompt("How many hotdogs would you like?", "1");
-      let fries = prompt("How many fries would you like?", "1");
-      let sodas = prompt("How many sodas would you like?", "1");
-      if (hotdogs != null) {
-        if (hotdogs == 1) {
-          document.getElementById("demo").innerHTML =
-          "Awesome! " + hotdogs + " hotdog coming up!";
-        } else {
-          document.getElementById("demo").innerHTML =
-          "Awesome! " + hotdogs + " hotdogs coming up!";
+      function myFunction() {
+        let hotdogs = prompt("How many hotdogs would you like?", "1");
+        let fries = prompt("How many fries would you like?", "1");
+        let sodas = prompt("How many sodas would you like?", "1");
+        if (hotdogs != null) {
+          if (hotdogs == 1) {
+            document.getElementById("demo").innerHTML =
+            "Awesome! " + hotdogs + " hotdog coming up!";
+          } else {
+            document.getElementById("demo").innerHTML =
+            "Awesome! " + hotdogs + " hotdogs coming up!";
+          }
         }
-
       }
-      if (fries != null) {
-        document.getElementById("demo").innerHTML =
-        "Awesome! " + fries + " fries coming up!";
-      }
-      if (sodas != null) {
-        document.getElementById("demo").innerHTML =
-        "Awesome! " + sodas + " sodas coming up!";
-      }
-    }
+    </script>
   </div>
-  </script>
   
   <footer>
     <p>Call in an order at (967) 254-9921.</p>
     <p>Email us at JoesDawgs@meat.com for further information on store hours and hiring.</p>
     <p style="font-size:15px;color:#333;">Joe's Hotdogs ©2023. All rights reserved.</p>
   </footer>
+  
 </body>
 </html>
 <!--  
