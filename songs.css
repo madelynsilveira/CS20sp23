@@ -12,6 +12,18 @@ song {
  padding-left:20px;
  margin-left:20px;
 }
+artist {
+ color: Indigo;
+}
+title {
+ color: DarkViolet;
+}
+genre {
+ color: DeepPink;
+}
+year {
+ color: Fuchsia;
+}
 bottom {
  font-size: 20px;
  color: #222;
