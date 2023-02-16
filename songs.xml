@@ -2,6 +2,9 @@
 <?xml-stylesheet type="text/css" href = "songs.css" ?>
 <songs>
   <song>
+    <top>2023's Latest Hits!&#xA;</top>
+  </song>
+  <song>
     <artist>Artist: The Wonder Years&#xA;</artist>
     <title>Title: Madelyn&#xA;</title>
     <genre>Genre: Indie&#xA;</genre>
@@ -60,5 +63,8 @@
     <title>Title: And She's Mine&#xA;</title>
     <genre>Genre: Pop, Rock&#xA;</genre>
     <year>Year: 1969&#xA;&#xA;</year>
+  </song>
+  <song>
+    <bottom> Wow it's almost like there was a hidden message in there or something... </bottom>
   </song>
 </songs>
