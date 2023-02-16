@@ -91,11 +91,10 @@
           let hotdogs = prompt("How many hotdogs would you like?", "1");
           let fries = prompt("How many fries would you like?", "1");
           let sodas = prompt("How many sodas would you like?", "1");
-          let total = 0;
+          let subtotal = 0;
           if (hotdogs != null && fries != null && sodas != null) {
             total = hotdogs * 4 + fries * 3.5 + sodas * 1.75;
-            document.getElementById("order").innerHTML = "Awesome! " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas coming up!\n
-            Your total is $" + total + ".";
+            document.getElementById("order").innerHTML = "Awesome! " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas coming up!\n Your subtotal is $" + total + ".";
           }
           
           
