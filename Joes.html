@@ -85,22 +85,16 @@
     <p> just some text</p><p> just some text</p><p> just some text</p><p> just some text</p>
     <p> just some text</p><p> just some text</p><p> just some text</p><p> just some text</p>
     
-      <button onclick="myFunction()">Try it</button>
-      <p id="demo"></p>
+      <button onclick="online_order()">Try it</button>
+      <p id="order"></p>
 
       <script>
-        function myFunction() {
+        function online_order() {
           let hotdogs = prompt("How many hotdogs would you like?", "1");
           let fries = prompt("How many fries would you like?", "1");
           let sodas = prompt("How many sodas would you like?", "1");
           if (hotdogs != null) {
-            if (hotdogs == 1) {
-              document.getElementById("demo").innerHTML =
-              "Awesome! " + hotdogs + " hotdog coming up!";
-            } else {
-              document.getElementById("demo").innerHTML =
-              "Awesome! " + hotdogs + " hotdogs coming up!";
-            }
+              document.getElementById("order").innerHTML = "Awesome! " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas coming up!";
           }
         }
       </script>
