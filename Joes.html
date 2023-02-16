@@ -109,8 +109,8 @@
 				discount = subtotal * .1;
                 subtotal = subtotal - discount;
             }
-            tax = Math.round(subtotal * .0625);
-            total = Math.round(subtotal + tax);
+            tax = (subtotal * .0625);
+            total = (subtotal + tax);
             
             document.getElementById("subtotal").innerHTML = subtotal;
             document.getElementById("discount").innerHTML = discount;
