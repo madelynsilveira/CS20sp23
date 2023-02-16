@@ -4,10 +4,13 @@ top {
  bakcground-color: Gainsboro;
 }
 songs {
+ display: block;
+ color: Blue;
  font-size: 25px;
  padding: 20px;
 }
 song { 
+ display: list-item;
  margin-left:20px;
 }
 artist {
