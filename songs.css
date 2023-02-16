@@ -4,6 +4,7 @@ top {
 }
 songs {
  font-size: 25px;
+ padding: 20px;
 }
 song { 
  margin-left:20px;
