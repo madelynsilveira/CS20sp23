@@ -83,18 +83,39 @@
     <p> Hotdogs: $4 </p>
     <p> Fries: $3.50 </p>
     <p> Sodas: $1.75 </p>
+    
       <button style="color:red;" onclick="online_order()">Order Online Now</button>
       <p id="order"></p>
+      
+      <p>Subtotal: $<span id="subtotal"></span></p>
+      <p>Discount: $<span id="discount"></span></p>
+      <p>Tax: $<span id="tax"></span></p>
+      <p>Total: $<span id="total"></span></p>
 
       <script>
         function online_order() {
           let hotdogs = prompt("How many hotdogs would you like?", "1");
           let fries = prompt("How many fries would you like?", "1");
           let sodas = prompt("How many sodas would you like?", "1");
-          let subtotal = 0;
-          if (hotdogs != null && fries != null && sodas != null) {
-            total = hotdogs * 4 + fries * 3.5 + sodas * 1.75;
-            document.getElementById("order").innerHTML = "Awesome! " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas coming up!\n Your subtotal is $" + total + ".";
+          let subtotal = 0; 
+          let discount = 0;
+          let tax = 0;
+          let total = 0;
+          if (hotdogs != null && fries != null) {
+            subtotal = hotdogs * 4 + fries * 3.5 + sodas * 1.75;
+            document.getElementById("order").innerHTML = "Awesome! " + hotdogs + " hotdogs, " + fries + " fries, and " + sodas + " sodas coming up!\nYour total is $" + subtotal + ".";
+
+            if (subtotal >= 20) {
+				discount = subtotal * .1;
+                subtotal = subtotal - discount;
+            }
+            tax = Math.round(subtotal * .0625);
+            total = Math.round(subtotal + tax);
+            
+            document.getElementById("subtotal").innerHTML = subtotal;
+            document.getElementById("discount").innerHTML = discount;
+            document.getElementById("tax").innerHTML = tax;
+            document.getElementById("total").innerHTML = total;
           }
           
           
