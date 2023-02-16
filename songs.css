@@ -4,7 +4,6 @@ songs {
 }
 song { 
  display: list-item;
- list-style: square;
  padding-left:20px;
  margin-left:20px;
 }
