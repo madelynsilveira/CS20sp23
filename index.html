@@ -59,7 +59,7 @@
 
     <!-- Set up bottom info -->
     <p><span id="player">'s turn...</span></p>
-	<button onclick="restart()">  Start a New Game  </button></br>
+    <button onclick="restart()">  Start a New Game  </button></br>
 
   <script>
         document.getElementById("player").innerHTML = "Player X's turn...";
@@ -73,7 +73,11 @@
 
         /* Runs the game */
         function run() {
+            /* used this link to help me understand how to access each cell:
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach*/
             columns.forEach(function(td) {
+                /* used this link to help me understand how to allow clicks: 
+                https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener */
                 td.addEventListener('click', function() {
                     if (td.textContent === '' && winner === null) {
                         td.textContent = player;
