@@ -81,7 +81,8 @@
                 td.addEventListener('click', function() {
                     if (td.textContent === '' && winner === null) {
                         td.textContent = player;
-
+			
+			/* use the naming system to access grid cells */
                         let row = parseInt(td.id.charAt(0));
                         let col = parseInt(td.id.charAt(1));
                         grid[row][col] = player;
