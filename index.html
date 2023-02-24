@@ -1,13 +1,152 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tic-Tac-Toe</title>
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 25px;
+        }
+        h1 {
+            font-size: 40px;
+            background-color: lightsalmon;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td {
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            font-size: 50px;
+            border: 1px solid darkorange;
+            background-color: lightgoldenrodyellow;
+            cursor: pointer;
+        }
+        button{
+            color:darkorange; 
+            background-color:blanchedalmond;
+            font-size:20px;
+        }
+    </style>
 </head>
 
-<style>
-</style>
-
 <body>
-</body>
+    <!-- Introduce the game -->
+    <h1><b>Tic-Tac-Toe</b></h1>
+    <p> Click any cell to start the game.</p>
 
-<html>
+    <!-- Create a table to hold the grid -->
+    <table>
+		<tr>
+			<td id="00"></td>
+			<td id="01"></td>
+			<td id="02"></td>
+		</tr>
+		<tr>
+			<td id="10"></td>
+			<td id="11"></td>
+			<td id="12"></td>
+		</tr>
+		<tr>
+			<td id="20"></td>
+			<td id="21"></td>
+			<td id="22"></td>
+		</tr>
+	</table>
+
+    <!-- Set up bottom info -->
+    <p><span id="player">'s turn...</span></p>
+    <button onclick="restart()">  Start a New Game  </button>
+
+  <script>
+        document.getElementById("player").innerHTML = "Player X's turn...";
+		
+        let grid = [['', '', ''],['', '', ''],['', '', '']];
+		let player = 'X';
+		let winner = null;
+		let columns = document.querySelectorAll('td'); 
+
+        run();
+
+        /* Runs the game */
+        function run() {
+            columns.forEach(function(td) {
+                td.addEventListener('click', function() {
+                    if (td.textContent === '' && winner === null) {
+                        td.textContent = player;
+
+                        let row = parseInt(td.id.charAt(0));
+                        let col = parseInt(td.id.charAt(1));
+                        grid[row][col] = player;
+
+                        checkWinner();
+                        checkGrid();
+                        changePlayer();
+                    }
+                });
+            });
+        }   
+
+        /* Changes player variable and outputs to screen */
+		function changePlayer() {
+            if (player === 'X') player = 'O'; 
+            else player = 'X';
+            document.getElementById("player").innerHTML = "Player " + player + "'s turn...";
+		}
+
+        /* Called after every viable click. Checks if winner has been found */
+		function checkWinner() {
+			for (let i = 0; i < 3; i++) {
+                /* Check Verticals */
+				if (grid[i][0] === player && grid[i][1] === player && grid[i][2] === player) {
+					winner = player;
+				}
+                /* Check Horizontals */
+				if (grid[0][i] === player && grid[1][i] === player && grid[2][i] === player) {
+					winner = player;
+				}
+			}
+            /* Check Diagonals */
+			if (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) {
+				winner = player;
+			}
+			if (grid[2][0] === player && grid[1][1] === player && grid[0][2] === player) {
+				winner = player;
+			}
+
+			if (winner !== null) {
+				alert(`Player ${player} wins!!!\nPress the button below to play again.`);
+                player = 'X';
+			}
+		}
+
+        /* Checks to see if all grid squares are occupied */
+        function checkGrid() {
+            if (winner == null) {
+                let count = 0;
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (grid[i][j] !== '') count++;
+                    }
+                }
+                if (count === 9) 
+                    alert(`You have reached a stalemate.\nPress the button below to play again.`);
+            }
+        }
+
+        /* Called by button, resets the grid for new game */
+        function restart() {
+            document.getElementById("player").innerHTML = "Player X's turn...";
+            columns.forEach(function(td) {td.textContent = '';});
+            grid = [['', '', ''],['', '', ''],['', '', '']];
+            player = 'X';
+            winner = null;
+            run();
+        }
+	</script>
+          
+</body>
+</html>
