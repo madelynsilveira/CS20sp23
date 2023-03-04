@@ -1,0 +1,59 @@
+
+body {
+    margin: 0;
+    font-family: "Bitter",serif;
+  }
+  
+  /* nav bar main text */
+  .nav {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 35px;
+    vertical-align: top;
+    z-index: 10; /* set vertical stacking of nav bar high */
+  }
+  
+  /* links in nav bar */
+  .nav a {
+    float: left;
+    color: Aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /* changing links based on clicks */
+  .nav a:hover {
+    background-color: #dd3b50;
+    background-size: 10px contain;
+    color: black;
+  }
+  .nav a.active {
+    background-color: red;
+    color: Aliceblue;
+  }
+  
+  .nav-right {
+    float: right;
+  }
+  
+  .main {
+    padding: 16px;
+    margin-top: 170px; /* fit below the nav bar */
+    font-size: 18px;
+  }
+  
+  footer { 
+    text-align: center;
+    padding: 3px;
+    background-color: #dd3b50;
+    color: Aliceblue;
+  }
+  
+  
+  
+  
