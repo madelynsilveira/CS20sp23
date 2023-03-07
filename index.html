@@ -1,242 +1,64 @@
 <!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Jade Delight</title>
-<style>
-	h1 {
-		background-color: darkseagreen;
-		color: black;
-		text-align: center;
-	}
+	<title>Javascript EC</title>
+	<style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
 
-	body {
-		color: darkslategray;
-		font-family: 'Copperplate', 'Arial Narrow', Arial, sans-serif
-	}
-
-	table {
-		width: 600px;
-		text-align: center;
-	}
-	th {
-		background-color: darkseagreen;
-		color: black;
-	}
-	td {
-		background-color: #dfecdf;
-	}
-
-	/* aligning input boxes */
-	.userInfo {
-		text-align: right;
-		margin-left: 5px;
-		max-width: 250px;
-		height: 21px;
-		background-color: #cfe2de;
-		background-size: cover;
-	}
-	.subtotal {
-		text-align: right;
-		max-width: 300px;
-		height: 21px;
-		background-color: #cfe2de;
-		background-size: cover;
-	}
-	.tax {
-		text-align: right;
-		max-width: 300px;
-		height: 21px;
-		background-color: #cfe2de;
-		background-size: cover;
-	}
-	.total {
-		text-align: right;
-		max-width: 300px;
-		height: 21px;
-		background-color: #cfe2de;
-		background-size: cover;
-	}
-	input[type=text] {
-		float: right;
-	}
-	input[type=button] {
-		background-color: darkseagreen;
-		font-family: 'Copperplate';
-	}
-</style>
-</head>
-<!-- use jquery .hide to hide city and street upon pickup -->
-<body>
-
-<script>
-function MenuItem(name, cost) {
-	this.name = name;
-	this.cost = cost;
-}
-
-menuItems = new Array(
-	new MenuItem("Chicken Chop Suey", 5.5),
-	new MenuItem("Sweet and Sour Pork", 7.25),
-	new MenuItem("Shrimp Lo Mein", 6.80),
-	new MenuItem("Moo Shi Chicken", 9.50),
-	new MenuItem("Fried Rice", 3.25)
-);
-
-function makeSelect(name, minRange, maxRange) {
-	/* t = total */
-	var t= "";
-	t = "<select name='" + name + "' size='1'>";
-	for (j=minRange; j<=maxRange; j++)
-	   t += "<option>" + j + "</option>";
-	t+= "</select>";
-	return t;
-} // t = <select name="Fried Rice" size='1'> <option> 1-10 </option> </select>
-
-function td(content, className="") {
-	return "<td class = '" + className + "'>" + content + "</td>";
-}
-	
-</script>
-
-<h1>Jade Delight</h1>
-<form>
-
-<p class="userInfo"><label>First Name:</label> <input type="text"  name='fname' /></p>
-<p class="userInfo"><label>Last Name*:</label>  <input type="text"  name='lname' /></p>
-<p class="userInfo address"><label>Street*:</label> <input type="text" name='street' /></p>
-<p class="userInfo address"><label>City*:</label> <input type="text" name='city' /></p>
-<p class="userInfo"><label>Phone*:</label> <input type="text"  name='phone' /></p>
-<p> 
-	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
-	<input type="radio"  name='p_or_d' value = 'delivery'/> Delivery
-</p>
-
-<script>
-/* script to hide address info unless delivery selected */
-const pickup = document.querySelector('input[value="pickup"]');
-const delivery = document.querySelector('input[value="delivery"]');
-const address = document.querySelectorAll('.userInfo.address');
-
-/* start with address elements hidden */
-address.forEach(element => {element.style.display = 'none';});
-
-/* add event listener to show for delivery and not show for pickup */
-pickup.addEventListener('click', () => {
-	address.forEach(element => {element.style.display = 'none';});});
-
-delivery.addEventListener('click', () => {
-	address.forEach(element => {element.style.display = 'block';});});
-</script>
-
-
-<table border="0" cellpadding="3">
-  <tr>
-    <th>Select Item</th>
-    <th>Item Name</th>
-    <th>Cost Each</th>
-    <th>Total Cost</th>
-  </tr>
-	<script>
-	/* making a string for table elements */
-	var s = "";
-	for (i=0; i<menuItems.length; i++) {
-		s += "<tr>";
-		s += td(makeSelect("quan" + i, 0, 10),"selectQuantity"); 	// select item
-		s += td(menuItems[i].name, "itemName");						// item name
-		s += td("$" +menuItems[i].cost.toFixed(2), "cost");			// cost each
-		s += td("$<input type='text' name='cost" + i + "'/>", "totalCost");	// total cost
-		s+= "</tr>";
-	}
-	document.writeln(s);
-
-	/* add listeners to each select item */
-	/* add event listeners to each select element */
-	var selectElements = document.getElementsByTagName("select");
-	for (i=0; i<selectElements.length; i++) {
-	selectElements[i].addEventListener("change", function() {
-		var rowIndex = this.parentNode.parentNode.rowIndex - 1;
-		var selectedQuantity = parseInt(this.value);
-		var itemCost = menuItems[rowIndex].cost;
-		var totalCost = selectedQuantity * itemCost;
-		document.getElementsByName("cost" + rowIndex)[0].value = totalCost.toFixed(2);
-		document.getElementsByName("subtotal")[0].value += totalCost.toFixed(2);
-		document.getElementsByName("tax")[0].value += (.0625 * totalCost).toFixed(2);
-		document.getElementsByName("total")[0].value += (1.0625 * totalCost).toFixed(2);
-	});}
-	</script>
-</table>
-
-<p class="subtotal totalSection"><label>Subtotal</label>: 
-   $ <input type="text"  name='subtotal' id="subtotal" /> </p>
-<p class="tax totalSection"><label>Mass tax 6.25%:</label>
-	$ <input type="text"  name='tax' id="tax" /> </p>
-<p class="total totalSection"><label>Total:</label> 
-	$ <input type="text"  name='total' id="total" /> </p>
-
-<input type = "button" value = "Submit Order" />
-</form>
-
-<p> We always appreciate your business. </p>
-<p id="arrival">  </p>
-
-<script src=
-"https://code.jquery.com/jquery-3.3.1.min.js">
-</script>
-<script>
-	/* pull variables and add listener */
-	const button = document.querySelector('input[type="button"]');
-	const text = document.querySelector('p[id="arrival"]');
-	button.addEventListener("click", validation);
-
-	function arrivalTime() {
-		const date = new Date();
-		const hours = date.getHours();
-		const minutes = date.getMinutes();
-
-		if (pickup.checked) {
-			text.textContent = "Your food will be ready for pickup by " + hours + ":" + (minutes + 15) + ".";
-		} else {
-			text.textContent = "Your food will arrive at " + hours + ":" + (minutes + 45) + ".";
+		.form-container {
+			display: block;
+			margin: 50px;
 		}
-	}
 
-	function validation() {
-		
-		// pull neccessary variables
-		const name = document.querySelector('input[name="lname"]').value; // need value to get input value
-		const number = document.querySelector('input[name="phone"]').value;
-		var selectItems = document.getElementsByTagName("select");
+		input[type=text] {
+            font-family: 'Times New Roman', Times, serif;
+			padding: 10px;
+			font-size: 60px;
+			border-radius: 5px;
+            background-color: lavender;
+            width: 200px;
+			margin: 10px;
+		}
 
-		// verify that an item was bought
-		var bought = false;
-		for (i=0; i <selectItems.length; i++) {
-			if (selectItems[i].value != 0) {
-				bought = true;
+
+		.jump {
+            font-family: 'Times New Roman', Times, serif;
+			padding: 10px 20px;
+			font-size: 60px;
+			border-radius: 5px;
+			margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+</br>
+    <h1> Click the button to jump some text! </h2>
+	<div class="form-container">
+		<input type="text" id="lbox">
+		<button id="jump" onclick="jumpText()">JUMP &gt;</button>
+		<input type="text" id="rbox">
+	</div>
+
+	<script>
+		function jumpText() {
+			const left = document.getElementById("lbox");
+			const right = document.getElementById("rbox");
+			const button = document.getElementById("jump");
+
+			if (left.value !== "") {
+				right.value = left.value;
+				left.value = "";
+				button.textContent = "< JUMP";
+			} else {
+				left.value = right.value;
+				right.value = "";
+				button.textContent = "JUMP >";
 			}
 		}
-
-		// verify that last name was entered
-		if (name == "") {
-			alert("No name entered!");
-		// verify that phone number was entered
-		} else if (number == "") {
-			alert("No phone number entered!");
-		// verify that phone number has 7 or 10 numbers
-		} else if (number.length != 7 && number.length != 10) {
-			alert("Please enter a valid phone number.");
-		// verify that item was bought
-		} else if (bought != true) {
-			alert("Please add an item to your cart to checkout.");
-
-		/* no validation issues */
-		} else {
-			alert("Thank you for your order!");
-			arrivalTime();
-			var newWin = open('https://madelynsilveira.github.io/CS20sp23/details.html','Order','height=300,width=300');
-			newWin.document.write("Thank you for your order! You purchased " + selectItems[0].value + " Chicken Chop Suey, " + selectItems[1].value + " Sweet and Sour Pork, " + selectItems[2].value + " Shrimp Lo Mein, " + selectItems[3].value + " Moo Shi Chicken, " + selectItems[4].value + " Fried Rice.");
-		}
-	}
-</script>
-
+	</script>
 </body>
 </html>
