@@ -1,0 +1,69 @@
+{
+  "songs": {
+    "song": [
+      {
+        "top": "2023's Latest Hits!\n"
+      },
+      {
+        "artist": "Artist: The Wonder Years\n",
+        "title": "Title: Madelyn\n",
+        "genre": "Genre: Indie\n",
+        "year": "Year: 2013\n\n"
+      },
+      {
+        "artist": "Artist: Leandro Esteves\n",
+        "title": "Title: Silveira\n",
+        "genre": "Genre: Indie\n",
+        "year": "Year: 2019\n\n"
+      },
+      {
+        "artist": "Artist: Stevie Wonder\n",
+        "title": "Title: Isn't She Lovely\n",
+        "genre": "Genres: R and B, Soul\n",
+        "year": "Year: 2002\n\n"
+      },
+      {
+        "artist": "Artists: Usher, Lil Jon, Ludacris\n",
+        "title": "Title: Yeah!\n",
+        "genre": "Genre: Hip Hop\n",
+        "year": "Year: 2004\n\n"
+      },
+      {
+        "artist": "Artist: ARTAN\n",
+        "title": "Title: She's a 10 but...\n",
+        "genre": "Genre: Pop\n",
+        "year": "Year: 2022\n\n"
+      },
+      {
+        "artist": "Artist: Moonshine Bandits\n",
+        "title": "Title: She's Crazy\n",
+        "genre": "Genre: Rock\n",
+        "year": "Year: 2015\n\n"
+      },
+      {
+        "artist": "Artist: Kelly Clarkson\n",
+        "title": "Title: Because of You\n",
+        "genre": "Genre: Pop\n",
+        "year": "Year: 2004\n\n"
+      },
+      {
+        "artist": "Artist: The Beatles\n",
+        "title": "Title: And I Love Her\n",
+        "genre": "Genre: Psychedelic Rock, Blues\n",
+        "year": "Year: 1964\n\n"
+      },
+      {
+        "artist": "Artist: Gary Bender\n",
+        "title": "Title: Because She's Beautiful\n",
+        "genre": "Genre: Indie\n",
+        "year": "Year: 2022\n\n"
+      },
+      {
+        "artist": "Artist: Spanky and Our Gang\n",
+        "title": "Title: And She's Mine\n",
+        "genre": "Genre: Pop, Rock\n",
+        "year": "Year: 1969\n\n"
+      }
+    ]
+  }
+}
