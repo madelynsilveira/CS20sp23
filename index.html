@@ -1,64 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript EC</title>
-	<style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-        }
-
-		.form-container {
-			display: block;
-			margin: 50px;
-		}
-
-		input[type=text] {
-            font-family: 'Times New Roman', Times, serif;
-			padding: 10px;
-			font-size: 60px;
-			border-radius: 5px;
-            background-color: lavender;
-            width: 200px;
-			margin: 10px;
-		}
-
-
-		.jump {
-            font-family: 'Times New Roman', Times, serif;
-			padding: 10px 20px;
-			font-size: 60px;
-			border-radius: 5px;
-			margin: 10px;
-		}
-
-	</style>
+	<title>Songs</title>
+	<meta charset="UTF-8">
 </head>
 <body>
-</br>
-    <h1> Click the button to jump some text! </h2>
-	<div class="form-container">
-		<input type="text" id="lbox">
-		<button id="jump" onclick="jumpText()">JUMP &gt;</button>
-		<input type="text" id="rbox">
-	</div>
-
-	<script>
-		function jumpText() {
-			const left = document.getElementById("lbox");
-			const right = document.getElementById("rbox");
-			const button = document.getElementById("jump");
-
-			if (left.value !== "") {
-				right.value = left.value;
-				left.value = "";
-				button.textContent = "< JUMP";
-			} else {
-				left.value = right.value;
-				right.value = "";
-				button.textContent = "JUMP >";
+	<h1>2023's Latest Hits!</h1>
+	<table>
+		<tr>
+			<th>Artist</th>
+			<th>Title</th>
+			<th>Genre</th>
+			<th>Year</th>
+		</tr>
+        <tr>
+		<script src="songs.json"></script>
+		<script>
+			var songs = jsonData.songs.song;
+			for (var i = 1; i < songs.length; i++) {
+                alert("song: " + songs[i].title);
+				var row = "<tr>";
+				row += "<td>" + songs[i].artist.replace("Artist: ", "") + "</td>";
+				row += "<td>" + songs[i].title.replace("Title: ", "") + "</td>";
+				row += "<td>" + songs[i].genre.replace("Genres: ", "").replace("Genre: ", "") + "</td>";
+				row += "<td>" + songs[i].year.replace("Year: ", "") + "</td>";
+				row += "</tr>";
+				document.write(row);
 			}
-		}
-	</script>
+		</script>
+        </tr>
+	</table>
 </body>
 </html>
