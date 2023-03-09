@@ -46,18 +46,37 @@
             $song.append($title, $artist, $genre, $year);
             $("body").append($song);
           });
-        });
-      });
+      //   });
+      // });
       // Create a form that allows the user to pick a genre.  
       // The form should have a drop-down box (<select>) listing the possible 
       //   genres plus a button labeled "Filter".  You must read the genres 
       //   from the JSON song list.  
+                // Create a dropdown menu to filter songs by genre
+                var genres = [...new Set(data.songs.map(song => song.genre.replace("Genre: ","").trim()))];
+          var $select = $("<select>").attr("id", "genre-filter");
+          $select.append($("<option>").attr("value", "").text("Filter by genre"));
+          $.each(genres, function(index, genre) {
+            $select.append($("<option>").attr("value", genre).text(genre));
+          });
+          $("body").prepend($select);
+
+          // Filter songs when a genre is selected from the dropdown menu
+          $("#genre-filter").on("change", function() {
+            var selectedGenre = $(this).val();
+            $(".song").show();
+            if (selectedGenre) {
+              $(".song").not(":contains('" + selectedGenre + "')").hide();
+            }
+          });
+        });
+      });
     </script>
   </head>
   <body>
     <h1>My Favorite Songs</h1>
 
-    <select name="select a genre" id="genres">
+    <!-- <select name="select a genre" id="genres">
       <option value="All">All</option>
       <option value="Blues">Blues</option>
       <option value="Hip Hop">Hip Hop</option>
@@ -81,6 +100,6 @@
 
 
       });
-    </script>
+    </script> -->
   </body>
 </html>
