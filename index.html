@@ -4,10 +4,9 @@
 	<title>Songs</title>
 </head>
 <body>
-	
 	<script> 
 		$.get("https://madelynsilveira.github.io/CS20sp23/songs.json", 
-     			function( data ) {
+			function( data ) {
 			   str = JSON.stringify(data);
 			   document.write(str);
 			})  
