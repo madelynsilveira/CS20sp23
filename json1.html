@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>My Favorite Songs</title>
     <style>
-      /* Define some basic styles for the page */
+      
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
@@ -38,10 +38,10 @@
           // Create a new song element for each item in the data
           $.each(data.songs, function(index, song) {
             var $song = $("<div>").addClass("song");
-            var $title = $("<h2>").text(song.title.replace("Title: ",""));
-            var $artist = $("<p>").text(song.artist.replace("Artist: ",""));
-            var $genre = $("<p>").addClass("genre").text(song.genre.replace("Genre: ",""));
-            var $year = $("<p>").text(song.year.replace("Year: ",""));
+            var $title = $("<h2>").text(song.title);
+            var $artist = $("<p> Artist: ").text(song.artist);
+            var $genre = $("<p> Genre: ").addClass("genre").text(song.genre);
+            var $year = $("<p> Released ").text(song.year);
             $song.append($title, $artist, $genre, $year);
             $("body").append($song);
           });
