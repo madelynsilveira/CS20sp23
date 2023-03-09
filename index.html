@@ -5,6 +5,13 @@
 	<meta charset="UTF-8">
 </head>
 <body>
+	<script> 
+		$.get("https://online.com/file.json", 
+     			function( data ) {
+			   str = JSON.stringify(data);
+			   document.write(str);
+			})  
+	</script>
 	<h1>2023's Latest Hits!</h1>
 	<table>
 		<tr>
