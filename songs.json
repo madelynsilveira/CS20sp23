@@ -1,64 +1,94 @@
 {
   "songs": [
     {
-      "artist": "Artist: The Wonder Years",
-      "title": "Title: Madelyn",
-      "genre": "Genre: Indie",
-      "year": "Year: 2013"
+      "artist": "The Wonder Years",
+      "title": "Madelyn",
+      "genre": "Indie",
+      "year": "2013"
     },
     {
-      "artist": "Artist: Leandro Esteves",
-      "title": "Title: Silveira",
-      "genre": "Genre: Indie",
-      "year": "Year: 2019"
+      "artist": "Leandro Esteves",
+      "title": "Silveira",
+      "genre": "Indie",
+      "year": "2019"
     },
     {
-      "artist": "Artist: Stevie Wonder",
-      "title": "Title: Isn't She Lovely",
+      "artist": "Stevie Wonder",
+      "title": "Isn't She Lovely",
       "genre": "Genres: R and B, Soul",
-      "year": "Year: 2002"
+      "year": "2002"
     },
     {
-      "artist": "Artists: Usher, Lil Jon, Ludacris",
-      "title": "Title: Yeah!",
-      "genre": "Genre: Hip Hop",
-      "year": "Year: 2004"
+      "artist": "Usher, Lil Jon, Ludacris",
+      "title": "Yeah!",
+      "genre": "Hip Hop",
+      "year": "2004"
     },
     {
-      "artist": "Artist: ARTAN",
-      "title": "Title: She's a 10 but...",
-      "genre": "Genre: Pop",
-      "year": "Year: 2022"
+      "artist": "ARTAN",
+      "title": "She's a 10 but...",
+      "genre": "Pop",
+      "year": "2022"
     },
     {
-      "artist": "Artist: Moonshine Bandits",
-      "title": "Title: She's Crazy",
-      "genre": "Genre: Rock",
-      "year": "Year: 2015"
+      "artist": "Moonshine Bandits",
+      "title": "She's Crazy",
+      "genre": "Rock",
+      "year": "2015"
     },
     {
-      "artist": "Artist: Kelly Clarkson",
-      "title": "Title: Because of You",
-      "genre": "Genre: Pop",
-      "year": "Year: 2004"
+      "artist": "Kelly Clarkson",
+      "title": "Because of You",
+      "genre": "Pop",
+      "year": "2004"
     },
     {
-      "artist": "Artist: The Beatles",
-      "title": "Title: And I Love Her",
-      "genre": "Genre: Psychedelic Rock, Blues",
-      "year": "Year: 1964"
+      "artist": "The Beatles",
+      "title": "And I Love Her",
+      "genre": "Psychedelic Rock, Blues",
+      "year": "1964"
     },
     {
-      "artist": "Artist: Gary Bender",
-      "title": "Title: Because She's Beautiful",
-      "genre": "Genre: Indie",
-      "year": "Year: 2022"
+      "artist": "Gary Bender",
+      "title": "Because She's Beautiful",
+      "genre": "Indie",
+      "year": "2022"
     },
     {
-      "artist": "Artist: Spanky and Our Gang",
-      "title": "Title: And She's Mine",
-      "genre": "Genre: Pop, Rock",
-      "year": "Year: 1969"
+      "artist": "Spanky and Our Gang",
+      "title": "And She's Mine",
+      "genre": "Pop, Rock",
+      "year": "1969"
+    },
+    {
+      "artist": "NEXT SONG",
+      "title": "She's Crazy",
+      "genre": "Rock",
+      "year": "2015"
+    },
+    {
+      "artist": "Kelly Clarkson",
+      "title": "Because of You",
+      "genre": "Pop",
+      "year": "2004"
+    },
+    {
+      "artist": "The Beatles",
+      "title": "And I Love Her",
+      "genre": "Psychedelic Rock, Blues",
+      "year": "1964"
+    },
+    {
+      "artist": "Gary Bender",
+      "title": "Because She's Beautiful",
+      "genre": "Indie",
+      "year": "2022"
+    },
+    {
+      "artist": "Spanky and Our Gang",
+      "title": "And She's Mine",
+      "genre": "Pop, Rock",
+      "year": "1969"
     }
   ]
 }
