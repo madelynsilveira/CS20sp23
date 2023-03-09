@@ -1,53 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JSON Songlist</title>
-    <meta charset="UTF-8">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      h1 {
-        text-align: center;
-      }
-      .song {
-        margin: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        box-shadow: 2px 2px 2px #ccc;
-      }
-      .song h2 {
-        font-size: 20px;
-        margin-top: 0;
-      }
-      .song p {
-        margin: 5px 0;
-      }
-      .song .artist {
-        font-weight: bold;
-      }
-      .song .title {
-        font-style: italic;
-      }
-      .song .genre, .song .year {
-        color: #999;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Songs JSON</h1>
-    <div id="songs"></div>
+  <head>
+    <meta charset="utf-8">
+    <title>Reading Songs from JSON file using jQuery</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $.getJSON('songs.json', function(data) {
-                $.each(data.song, function(i, f) {
-                var tblRow = "<tr>" + "<td>" + f.arist + "</td>" +
-                "<td>" + f.title + "</td>" + "<td>" + f.genre + "</td>" + "<td>" + f.year + "</td>" + "</tr>"
-                $(tblRow).appendTo("#userdata tbody");
-            });
+      $(document).ready(function() {
+        $.getJSON("songs.json", function(data) {
+          console.log(data);
+          // Do something with the data here, e.g.:
+          $.each(data, function(index, song) {
+            $("body").append("<p>" + song.title + " by " + song.artist + "</p>");
+          });
         });
+      });
     </script>
-</body>
+  </head>
+  <body>
+  </body>
 </html>
