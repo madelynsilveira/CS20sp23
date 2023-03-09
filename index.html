@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Songs</title>
-</head>
-<body>
-	<h1> Songs </h1>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script> 
-		$.get("https://madelynsilveira.github.io/CS20sp23/songs.json", 
-			function( data ) {
-			   str = JSON.stringify(data);
-			   document.write(str); })  
-	</script>
+    <title>JSON Songlist</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+      }
+      .song {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 2px 2px 2px #ccc;
+      }
+      .song h2 {
+        font-size: 20px;
+        margin-top: 0;
+      }
+      .song p {
+        margin: 5px 0;
+      }
+      .song .artist {
+        font-weight: bold;
+      }
+      .song .title {
+        font-style: italic;
+      }
+      .song .genre, .song .year {
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Songs JSON</h1>
+    <div id="songs"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $.getJSON('songs.json', function(data) {
+                $.each(data.song, function(i, f) {
+                var tblRow = "<tr>" + "<td>" + f.arist + "</td>" +
+                "<td>" + f.title + "</td>" + "<td>" + f.genre + "</td>" + "<td>" + f.year + "</td>" + "</tr>"
+                $(tblRow).appendTo("#userdata tbody");
+            });
+        });
+    </script>
 </body>
 </html>
