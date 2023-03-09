@@ -35,7 +35,7 @@
     <script>
       $(document).ready(function() {
         $.getJSON("songs.json", function(data) {
-          console.log(data);
+          // console.log(data);
           // Create a new song element for each item in the data
           $.each(data.songs, function(index, song) {
             var $song = $("<div>").addClass("song");
@@ -70,13 +70,15 @@
 
     <script>
       // get the select element
-      var select = document.getElementById("fruits");
+      var select = document.getElementById("genres");
 
       // add event listener to detect when the user selects an option
       select.addEventListener("change", function() {
-        var selectedOption = this.options[this.selectedIndex].value;
-        console.log("You selected: " + selectedOption);
-        // do something with the selected value, such as display it on the page
+        var selection = this.options[this.selectedIndex].value;
+        console.log("You selected: " + selection);
+        // do something with the selected value
+
+        
       });
     </script>
   </body>
