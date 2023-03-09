@@ -48,9 +48,33 @@
           });
         });
       });
+      // Create a form that allows the user to pick a genre.  
+      // The form should have a drop-down box (<select>) listing the possible 
+      //   genres plus a button labeled "Filter".  You must read the genres 
+      //   from the JSON song list.  
     </script>
   </head>
   <body>
     <h1>My Favorite Songs</h1>
+    
+    <select id="fruits">
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="cherry">Cherry</option>
+      <option value="kiwi">Kiwi</option>
+      <option value="orange">Orange</option>
+    </select>
+
+    <script>
+      // get the select element
+      var select = document.getElementById("fruits");
+
+      // add event listener to detect when the user selects an option
+      select.addEventListener("change", function() {
+        var selectedOption = this.options[this.selectedIndex].value;
+        console.log("You selected: " + selectedOption);
+        // do something with the selected value, such as display it on the page
+      });
+    </script>
   </body>
 </html>
