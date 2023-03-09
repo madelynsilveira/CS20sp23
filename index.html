@@ -13,30 +13,5 @@
 			   document.write(str);
 			})  
 	</script>
-	<h1>2023's Latest Hits!</h1>
-	<table>
-		<tr>
-			<th>Artist</th>
-			<th>Title</th>
-			<th>Genre</th>
-			<th>Year</th>
-		</tr>
-        <tr>
-		<script src="https://madelynsilveira.github.io/CS20sp23/songs.json"></script>
-		<script>
-			var songs = jsonData.songs.song;
-			for (var i = 1; i < songs.length; i++) {
-                alert("song: " + songs[i].title);
-				var row = "<tr>";
-				row += "<td>" + songs[i].artist.replace("Artist: ", "") + "</td>";
-				row += "<td>" + songs[i].title.replace("Title: ", "") + "</td>";
-				row += "<td>" + songs[i].genre.replace("Genres: ", "").replace("Genre: ", "") + "</td>";
-				row += "<td>" + songs[i].year.replace("Year: ", "") + "</td>";
-				row += "</tr>";
-				document.write(row);
-			}
-		</script>
-        </tr>
-	</table>
 </body>
 </html>
