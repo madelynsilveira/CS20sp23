@@ -36,38 +36,41 @@
       $(document).ready(function() {
         $.getJSON("songs.json", function(data) {
 
-        // Create a new song element for each item in the data
-        $.each(data.songs, function(index, song) {
-        var $song = $("<div>").addClass("song");
-        var $title = $("<h2>").text(song.title);
-        var $artist = $("<p>").addClass("artist").text(song.artist.join(", "));
-        var $genre = $("<p>").addClass("genre").text(song.genre.join(", "));
-        var $year = $("<p>").text(song.year);
-        $song.append($title, $artist, $genre, $year);
-        $("body").append($song);
-        });
+            // Create a new song element for each item in the data
+            $.each(data.songs, function(index, song) {
+                var $song = $("<div>").addClass("song");
+                var $title = $("<h2>").text(song.title);
+                var $artist = $("<p>").addClass("artist").text(song.artist.join(", "));
+                var $genre = $("<p>").addClass("genre").text(song.genre.join(", "));
+                var $year = $("<p>").text(song.year);
+
+                $song.append($title, $artist, $genre, $year);
+                $("body").append($song);
+            });})});
+        // });}
 
         // Create a dropdown menu to filter songs by genre
         var genres = [...new Set(data.songs.flatMap(song => song.genre.map(g => g.replace("Genre: ","").trim())))];
         var $select = $("<select>").attr("id", "genre-filter");
+        
         $select.append($("<option>").attr("value", "").text("Filter by genre"));
         $.each(genres, function(index, genre) {
-        $select.append($("<option>").attr("value", genre).text(genre));
-        });
+            $select.append($("<option>").attr("value", genre).text(genre));});
+        
         $("body").prepend($select);
 
         // Filter songs when a genre is selected from the dropdown menu
         $("#genre-filter").on("change", function() {
-        var selectedGenre = $(this).val();
-        $(".song").show();
-        if (selectedGenre) {
-        $(".song").each(function() {
-        var genres = $(this).find(".genre").text().split(", ");
-        if (!genres.includes(selectedGenre)) {
-        $(this).hide();
-        }
-        });
-        }
+            var selectedGenre = $(this).val();
+            $(".song").show();
+            if (selectedGenre) {
+            $(".song").each(function() {
+                var genres = $(this).find(".genre").text().split(", ");
+                if (!genres.includes(selectedGenre)) {
+                $(this).hide();
+                }
+            });
+            }
         });
     </script>
   </head>
