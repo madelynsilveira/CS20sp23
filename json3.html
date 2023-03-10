@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Favorite Songs</title>
+    <style>
+      
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        background-color: cornflowerblue;
+      }
+      .song {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+      }
+      .song h2 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+      .song p {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+      .song .genre {
+        font-style: italic;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.getJSON("songs.json", function(data) {
+          // console.log(data);
+          // Create a new song element for each item in the data
+          $.each(data.songs, function(index, song) {
+            var $song = $("<div>").addClass("song");
+            var $title = $("<h2>").text(song.title);
+            var $artist = $("<p> Artist: ").text(song.artist);
+            var $genre = $("<p> Genre: ").addClass("genre").text(song.genre);
+            var $year = $("<p> Released ").text(song.year);
+            $song.append($title, $artist, $genre, $year);
+            $("body").append($song);
+          });
+
+          // Create a dropdown menu to filter songs by genre
+          var genres = [...new Set(data.songs.map(song => song.genre.replace("Genre: ","").trim()))];
+          var $select = $("<select>").attr("id", "genre-filter");
+          $select.append($("<option>").attr("value", "").text("Filter by genre"));
+          $.each(genres, function(index, genre) {
+            $select.append($("<option>").attr("value", genre).text(genre));
+          });
+          $("body").prepend($select);
+
+          // Filter songs when a genre is selected from the dropdown menu
+          $("#genre-filter").on("change", function() {
+            var selectedGenre = $(this).val();
+            $(".song").show();
+            if (selectedGenre) {
+              $(".song").not(":contains('" + selectedGenre + "')").hide();
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>My Favorite Songs</h1>
+  </body>
+</html>
