@@ -15,11 +15,11 @@
     {
       "artist": "Stevie Wonder",
       "title": "Isn't She Lovely",
-      "genre": "R & B, Soul",
+      "genre": ["R & B", "Soul"],
       "year": "2002"
     },
     {
-      "artist": "Usher, Lil Jon, Ludacris",
+      "artist":["Usher", "Lil Jon", "Ludacris"],
       "title": "Yeah!",
       "genre": "Hip Hop",
       "year": "2004"
@@ -69,7 +69,7 @@
     {
       "artist": "Del Water Gap",
       "title": "I Hope You Understand",
-      "genre": "Alternative Rock",
+      "genre": ["Alternative", "Alternative Rock"],
       "year": "2004"
     },
     {
