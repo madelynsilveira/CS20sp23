@@ -2,79 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Favorite Songs</title>
-    <style>
-      
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      h1 {
-        text-align: center;
-        background-color: cornflowerblue;
-      }
-      .song {
-        margin-bottom: 20px;
-        padding: 10px;
-        background-color: #f5f5f5;
-        border-radius: 5px;
-      }
-      .song h2 {
-        margin-top: 0;
-        font-size: 18px;
-      }
-      .song p {
-        margin-bottom: 0;
-        font-size: 16px;
-      }
-      .song .genre {
-        font-style: italic;
-      }
-    </style>
+    <title>Songs by Genre</title>
+  </head>
+  <body>
+    <h1>Songs by Genre</h1>
+    <form>
+      <label for="genre">Select a genre:</label>
+      <select id="genre" name="genre">
+        <option value="">All genres</option>
+        <option value="Indie">Indie</option>
+        <option value="R &amp; B">R &amp; B</option>
+        <option value="Soul">Soul</option>
+        <option value="Hip Hop">Hip Hop</option>
+        <option value="Pop">Pop</option>
+        <option value="Rock">Rock</option>
+        <option value="Psychedelic Rock, Blues">Psychedelic Rock, Blues</option>
+        <option value="Alternative">Alternative</option>
+        <option value="Alternative Rock">Alternative Rock</option>
+        <option value="Dubstep">Dubstep</option>
+      </select>
+      <button type="submit">Filter</button>
+    </form>
+    <div id="songs">
+      <!-- Songs will be added here dynamically based on the selected genre -->
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         $.getJSON("songs.json", function(data) {
+          // Display all songs by default
+          showSongs(data.songs);
 
-            // Create a new song element for each item in the data
-            $.each(data.songs, function(index, song) {
-                var $song = $("<div>").addClass("song");
-                var $title = $("<h2>").text(song.title);
-                var $artist = $("<p>").addClass("artist").text(song.artist.join(", "));
-                var $genre = $("<p>").addClass("genre").text(song.genre.join(", "));
-                var $year = $("<p>").text(song.year);
-
-                $song.append($title, $artist, $genre, $year);
-                $("body").append($song);
-            });})});
-        // });}
-
-        // Create a dropdown menu to filter songs by genre
-        var genres = [...new Set(data.songs.flatMap(song => song.genre.map(g => g.replace("Genre: ","").trim())))];
-        var $select = $("<select>").attr("id", "genre-filter");
-        
-        $select.append($("<option>").attr("value", "").text("Filter by genre"));
-        $.each(genres, function(index, genre) {
-            $select.append($("<option>").attr("value", genre).text(genre));});
-        
-        $("body").prepend($select);
-
-        // Filter songs when a genre is selected from the dropdown menu
-        $("#genre-filter").on("change", function() {
-            var selectedGenre = $(this).val();
-            $(".song").show();
-            if (selectedGenre) {
-            $(".song").each(function() {
-                var genres = $(this).find(".genre").text().split(", ");
-                if (!genres.includes(selectedGenre)) {
-                $(this).hide();
-                }
+          // Filter songs by genre when the form is submitted
+          $("form").submit(function(event) {
+            event.preventDefault();
+            var selectedGenre = $("#genre").val();
+            var filteredSongs = data.songs.filter(function(song) {
+              return song.genre.includes(selectedGenre);
             });
-            }
+            showSongs(filteredSongs);
+          });
         });
+        
+        function showSongs(songs) {
+          var $songs = $("#songs");
+          $songs.empty();
+          $.each(songs, function(index, song) {
+            var $song = $("<div>").addClass("song");
+            var $title = $("<h2>").text(song.title);
+            var $artist = $("<p>").text(song.artist.join(", "));
+            var $genre = $("<p>").addClass("genre").text(song.genre.join(", "));
+            var $year = $("<p>").text(song.year);
+            $song.append($title, $artist, $genre, $year);
+            $songs.append($song);
+          });
+        }
+      });
     </script>
-  </head>
-  <body>
-    <h1>My Favorite Songs</h1>
   </body>
 </html>
