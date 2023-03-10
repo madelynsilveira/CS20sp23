@@ -1,105 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>My Favorite Songs</title>
-    <style>
-      
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      h1 {
-        text-align: center;
-        background-color: cornflowerblue;
-      }
-      .song {
-        margin-bottom: 20px;
-        padding: 10px;
-        background-color: #f5f5f5;
-        border-radius: 5px;
-      }
-      .song h2 {
-        margin-top: 0;
-        font-size: 18px;
-      }
-      .song p {
-        margin-bottom: 0;
-        font-size: 16px;
-      }
-      .song .genre {
-        font-style: italic;
-      }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $.getJSON("songs.json", function(data) {
-          // console.log(data);
-          // Create a new song element for each item in the data
-          $.each(data.songs, function(index, song) {
-            var $song = $("<div>").addClass("song");
-            var $title = $("<h2>").text(song.title);
-            var $artist = $("<p> Artist: ").text(song.artist);
-            var $genre = $("<p> Genre: ").addClass("genre").text(song.genre);
-            var $year = $("<p> Released ").text(song.year);
-            $song.append($title, $artist, $genre, $year);
-            $("body").append($song);
-          });
-      //   });
-      // });
-      // Create a form that allows the user to pick a genre.  
-      // The form should have a drop-down box (<select>) listing the possible 
-      //   genres plus a button labeled "Filter".  You must read the genres 
-      //   from the JSON song list.  
-                // Create a dropdown menu to filter songs by genre
-                var genres = [...new Set(data.songs.map(song => song.genre.replace("Genre: ","").trim()))];
-          var $select = $("<select>").attr("id", "genre-filter");
-          $select.append($("<option>").attr("value", "").text("Filter by genre"));
-          $.each(genres, function(index, genre) {
-            $select.append($("<option>").attr("value", genre).text(genre));
-          });
-          $("body").prepend($select);
-
-          // Filter songs when a genre is selected from the dropdown menu
-          $("#genre-filter").on("change", function() {
-            var selectedGenre = $(this).val();
-            $(".song").show();
-            if (selectedGenre) {
-              $(".song").not(":contains('" + selectedGenre + "')").hide();
-            }
-          });
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <h1>My Favorite Songs</h1>
-
-    <!-- <select name="select a genre" id="genres">
-      <option value="All">All</option>
-      <option value="Blues">Blues</option>
-      <option value="Hip Hop">Hip Hop</option>
-      <option value="Indie">Indie</option>
-      <option value="Pop">Pop</option>
-      <option value="Psychedlic Rock">Psychedlic Rock</option>
-      <option value="R & B">R & B</option>
-      <option value="Rock">Rock</option>
-      <option value="Soul">Soul</option>
-    </select></br>
-
-    <script>
-      // get the select element
-      var select = document.getElementById("genres");
-
-      // add event listener to detect when the user selects an option
-      select.addEventListener("change", function() {
-        var selection = this.options[this.selectedIndex].value;
-        console.log("You selected: " + selection);
-        // do something with the selected value
-
-
-      });
-    </script> -->
-  </body>
+<head>
+	<title>Raw Data</title>
+</head>
+<body>
+	<h1> Songs </h1>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script> 
+		$.get("https://madelynsilveira.github.io/CS20sp23/songs.json", 
+			function( data ) {
+			   str = JSON.stringify(data);
+			   document.write(str); })  
+	</script>
+</body>
 </html>
