@@ -51,17 +51,18 @@
       </select>
       <button type="submit">Filter</button>
     </form></br>
-    <div id="songs">
-      <!-- Songs will be added here dynamically based on the selected genre -->
-    </div>
+
+    <div id="songs"></div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         $.getJSON("songs.json", function(data) {
-          // Display all songs by default
+
+          // start with all songs showing so you can see my message!
           showSongs(data.songs);
 
-          // Filter songs by genre when the form is submitted
+          // filter by genre 
           $("form").submit(function(event) {
             event.preventDefault();
             var selectedGenre = $("#genre").val();
@@ -72,6 +73,7 @@
           });
         });
         
+        // display the songs again
         function showSongs(songs) {
           var $songs = $("#songs");
           $songs.empty();
