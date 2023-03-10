@@ -1,19 +1,19 @@
 {
   "songs": [
     {
-      "artist": "The Wonder Years",
+      "artist": ["The Wonder Years"],
       "title": "Madelyn",
-      "genre": "Indie",
+      "genre": ["Indie"],
       "year": "2013"
     },
     {
-      "artist": "Leandro Esteves",
+      "artist": ["Leandro Esteves"],
       "title": "Silveira",
-      "genre": "Indie",
+      "genre": ["Indie"],
       "year": "2019"
     },
     {
-      "artist": "Stevie Wonder",
+      "artist": ["Stevie Wonder"],
       "title": "Isn't She Lovely",
       "genre": ["R & B", "Soul"],
       "year": "2002"
@@ -21,73 +21,73 @@
     {
       "artist":["Usher", "Lil Jon", "Ludacris"],
       "title": "Yeah!",
-      "genre": "Hip Hop",
+      "genre": ["Hip Hop"],
       "year": "2004"
     },
     {
-      "artist": "ARTAN",
+      "artist": ["ARTAN"],
       "title": "She's a 10 but...",
-      "genre": "Pop",
+      "genre": ["Pop"],
       "year": "2022"
     },
     {
-      "artist": "Moonshine Bandits",
+      "artist": ["Moonshine Bandits"],
       "title": "She's Crazy",
-      "genre": "Rock",
+      "genre": ["Rock"],
       "year": "2015"
     },
     {
-      "artist": "Kelly Clarkson",
+      "artist": ["Kelly Clarkson"],
       "title": "Because of You",
-      "genre": "Pop",
+      "genre": ["Pop"],
       "year": "2004"
     },
     {
-      "artist": "The Beatles",
+      "artist": ["The Beatles"],
       "title": "And I Love Her",
-      "genre": "Psychedelic Rock, Blues",
+      "genre": ["Psychedelic Rock, Blues"],
       "year": "1964"
     },
     {
-      "artist": "Gary Bender",
+      "artist": ["Gary Bender"],
       "title": "Because She's Beautiful",
-      "genre": "Indie",
+      "genre": ["Indie"],
       "year": "2022"
     },
     {
-      "artist": "Spanky and Our Gang",
+      "artist": ["Spanky and Our Gang"],
       "title": "And She's Mine",
-      "genre": "Pop, Rock",
+      "genre": ["Pop, Rock"],
       "year": "1969"
     },
     {
-      "artist": "Noah Kahan",
+      "artist": ["Noah Kahan"],
       "title": "Anyway",
-      "genre": "Indie",
+      "genre": ["Indie"],
       "year": "2020"
     },
     {
-      "artist": "Del Water Gap",
+      "artist": ["Del Water Gap"],
       "title": "I Hope You Understand",
       "genre": ["Alternative", "Alternative Rock"],
       "year": "2004"
     },
     {
-      "artist": "Bo Burnham",
+      "artist": ["Bo Burnham"],
       "title": "That Funny Feeling",
-      "genre": "Alternative",
+      "genre": ["Alternative"],
       "year": "2021"
     },
     {
-      "artist": "MGMT",
+      "artist": ["MGMT"],
       "title": "When You Die",
-      "genre": "Alternative",
+      "genre": ["Alternative"],
       "year": "2018"
     },
     {
-      "artist": "Leeh Bianco",
+      "artist": ["Leeh Bianco"],
       "title": "Without Fear of Being Happy",
-      "genre": "Dubstep",
+      "genre": ["Dubstep"],
       "year": "1969"
     }
   ]
