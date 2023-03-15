@@ -1,36 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-	</head>
-	<body>
-		<form>
-				<legend> Find A Cat Near You! </legend>
-				<label for="zip">Zip</label>
-				<input type="text" name="zip" id="zip">
-				<input type="submit" id="submitZip">
-		</form>
-		
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src='script.js'></script>
-	</body>
-</html>
+<head>
+	<title>Weather API</title>
+	<meta charset="utf-8"/>
+	<script>
+		function getWeather() {
+			/* Step 1: Make instance of request object...
+			...to make HTTP request after page is loaded*/
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+ 
+			// Step 2: Set the URL for the AJAX request to be the JSON file
+ 
+		request.open("GET", "http://api.petfinder.com/pet.getRandom", true)
 
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>API Fun</title>
-    <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+			console.log("2 - opened request file");
+ 
+			// Step 3: set up event handler/callback
 
-  <body>
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+
+					// Step 5: wait for done + success
+					console.log("5 - response received");
+					result = request.responseText;
+					alert(result);
+					pet = JSON.parse(result);
+					
+					document.getElementById("data").innerHTML ="current temp in boston: " + pet; 
+					
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+
+				}
+
+			}
+		// Step 4: fire off the HTTP request
+			request.send();
+			console.log("4 - Request sent");
+		}
+	</script>
+</head>
+
+
+<body onload="getWeather()">
+
 	<h1>Animals</h1>
-    <button type="submit" onclick="getPets()">Submit</button>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src='script.js'></script>
+	<div id="data">Loading</div>
 </body>
-</html> -->
-
-<!-- Key: UhWSUX8U5j2cYXVWw8RNjWAw8XulKvagAagFGN74U20X8RkBVt -->
-<!-- Secret: CX6c5TNg13YRr8DMmTgzhvTwgkTQfeSEDfVsBoWA -->
-
-<!-- curl -d "grant_type=client_credentials&client_id=UhWSUX8U5j2cYXVWw8RNjWAw8XulKvagAagFGN74U20X8RkBVt&client_secret=CX6c5TNg13YRr8DMmTgzhvTwgkTQfeSEDfVsBoWA" https://api.petfinder.com/v2/oauth2/token -->
+</html>
