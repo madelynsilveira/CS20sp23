@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<title>About my APIs</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"/>
+</head>
+<style>
+
+h1 {
+    color: white;
+    text-align: center;
+    background-color: #3c2b69;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.middle-container {
+    width: 5%;
+}
+
+.left-container,
+.right-container {
+  width: 50%;
+  padding: 10px;
+  background-color: #eee;
+}
+
+p {
+    color: #3c2b69;
+    font-size: 20px;;
+    padding: 10px;
+}
+
+
+</style>
+<body>
+    <h1> About MY APIs</h1>
+    <div class="container">
+        <div class="left-container">
+          <h2>Bored API</h2>
+          <p>I started out this project using <a href="https://www.boredapi.com/">Bored API</a> to generate a random activity. This API would be helpful for its intended, use – to offer things to do if you’re bored, especially is you allowed the user to select based on type of activity or etc., or for some type of machine learning project where you see how the AI interprets each task. I just used it to pull an activity alone with GET, but I found that a little bland, so I decided to use another API to make it more interesting. </p>
+        </div>
+        <div class="middle-container"></div>
+        <div class="right-container">
+          <h2>Contextual Web Search API</h2>
+          <p>The second API I used was a <a href="https://rapidapi.com/contextualwebsearch/api/web-search/">Contextual Wed Search API</a> to search for visual elements. This API returns images from the first page of a web search based on a query. It would be cool to use this for some project where you analyze what web searching offers based on query. For example, you could observe the differences in response to two synonyms. It could help users understand what they should be searching to get the results they want. It could also be an easy way for an AI like chat gpt to generate visual aspects along with an explanation. This is sort of how I used it. I took the random activity that I retrieved from Bored API as the query for the url I passed into feth() to get images from Contextual Web Search. It’s not perfect: sometimes the images are forbidden and don’t show up. I could have parsed the query for the relevant keywords and then only used those in the query string, but I didn’t take the time to do that. </p>
+        </div>
+      </div><br>
+
+      <a href="index.html" style="color: #3c2b69; padding: 20px; background-color: #eee; text-decoration: none; margin: 20px"><b>GO BACK TO PIPELINE</b></a>
+</body>
+</html>

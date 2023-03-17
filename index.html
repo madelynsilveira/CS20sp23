@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<title>My API</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function generate() {
+			
+			var query = "Taylor Swift";
+			const activity = new XMLHttpRequest();
+
+			// use AJAX elements to retrieve API request
+			activity.open("GET", "https://www.boredapi.com/api/activity/", true)
+
+			activity.onreadystatechange = function() {
+				if (activity.readyState == 4 && activity.status == 200) {
+					query = JSON.parse(activity.responseText)["activity"];
+					document.getElementById("data_activity").innerHTML = query; 	
+					use_query(query);
+				}
+				else if (activity.readyState == 4 && activity.status != 200) {
+					document.getElementById("data_activity").innerHTML = "Status code wrong.";
+				}
+				else if (activity.readyState == 3) {
+					document.getElementById("data_activity").innerHTML = "Ready state wrong.";
+				}
+			}
+
+			activity.send();
+		}
+
+		// call rapid API based on query
+		function use_query(query) {
+
+			const images = new XMLHttpRequest();
+			const image_api_key = "50faab4c5bmshfaaa94621a435d3p116e0bjsnf528cac13f9f";
+			const image_base_url = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI";
+			
+			var url = `${image_base_url}?q=${encodeURIComponent(query)}&pageNumber=1&pageSize=10&autoCorrect=true`;
+			url += `&X-RapidAPI-Key=${image_api_key}`;
+
+			// use fetch to retrieve API request
+			fetch(url, {
+				headers: {
+				"X-RapidAPI-Key": "b04abd034bmshac3de1d0fedcabdp136621jsn130257982a4f",
+				"X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
+				},
+			})
+
+			.then(response => {
+				if (!response.ok) {
+					throw new Error("Status code wrong.");
+				}
+				return response.json();
+				})
+				.then(data => {
+				const gallery = data.value.map(item => item.url);
+				const imageContainer = document.getElementById("gallery");
+				gallery.forEach(imageUrl => {
+					const img = document.createElement("img");
+					img.src = imageUrl;
+					imageContainer.appendChild(img);
+				});
+				})
+				.catch(error => {
+				console.error(error);
+				document.getElementById("data_images").innerHTML = "Error occurred.";
+			});
+		}
+	</script>
+</head>
+
+
+<body>
+	<h1>Welcome to the Productivity Pipeline!</h1>
+	<p><a href="description.html" style="text-decoration: none; color: rgb(222, 218, 218);"> Click here to learn about the APIs I used </a></p><br>
+	<div id="data_activity">Press the pipe to generate some fresh inspiration.</div><br>
+	<div id="data_images"></div>
+	<div id="gallery"></div><br>
+	<button onclick="generate()"><img src="pipe.png" alt="pipe"></button>
+	<!-- https://www.boredapi.com/ -->
+</body>
+</html>
